@@ -1,1 +1,1 @@
-​
+by counting method
