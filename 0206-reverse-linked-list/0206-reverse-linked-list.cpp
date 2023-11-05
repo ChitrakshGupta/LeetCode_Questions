@@ -10,23 +10,46 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        if(head==NULL){
-            return head;
+    ListNode* reverseRecursion(ListNode* prev,ListNode*curr){
+        if(curr==NULL){
+            return prev;
         }
+        
+        // ek case hmne solve kr diya 
+         
+            ListNode* nextnode=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=nextnode;
+         // baaki kon samelega - recursion
+        
+        ListNode * recursionKaAns=reverseRecursion(prev,curr);
+        return recursionKaAns;
+        
+    }
+    ListNode* reverseList(ListNode* head) {
+        
+        //Iterative
         
         ListNode* curr=head;
         
         ListNode* prev=NULL;
         
-        while(curr!=NULL){
-            ListNode* nextnode=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=nextnode;
-        }
+//         while(curr!=NULL){
+//             ListNode* nextnode=curr->next;
+//             curr->next=prev;
+//             prev=curr;
+//             curr=nextnode;
+//         }
         
-        return prev;
+//         return prev;
+        
+        
+        //recursion 
+       return  reverseRecursion(prev,curr);
+        
+
+           
         
     }
 };
