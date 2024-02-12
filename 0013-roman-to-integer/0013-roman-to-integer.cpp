@@ -1,7 +1,7 @@
 class Solution {
 public:
     int romanToInt(string s) {
-        
+           
           char arr[7]={'I','V','X','L','C','D','M'};
         int arr2[7]={1,5,10,50,100,500,1000};
         int num=0;
@@ -25,6 +25,8 @@ public:
             }
         }
         return num;
+        
+    
         
     }
 };
